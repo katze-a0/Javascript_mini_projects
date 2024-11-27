@@ -5,6 +5,7 @@ const api_url="https://api.github.com/users/";
 
 //  event listener to the button for the 'click' event
 button.addEventListener('click', async() => {
+    
     // Retrieve the value from the input field and trim it
     const username = nameInput.value.trim();
 
@@ -34,13 +35,24 @@ async function getData(username){
     }
 const check_result =(username, isFound)=>{
     if(isFound){
+
+        avatar.style.backgroundImage = `url(${isFound.avatar_url})`;
+        avatar.style.backgroundSize = 'cover';
+        avatar.style.backgroundPosition = 'center';
+
        const re=document.getElementById("result_section");
        re.innerHTML=`<p>Username  <strong>  ${username}  </strong>  found </p> 
                     <br>
                      <p> Repositories : ${isFound.public_repos}</p>
                      <br>
                      <p>Followers: ${isFound.followers}</p>
+                     <br>
+                     <p>Following:${isFound.following}</p>
+                     <br>
+                      
        `; 
+
+
     }
     else{
         re.innerHTML=`Username <strong> ${username} </strong> not found`;
