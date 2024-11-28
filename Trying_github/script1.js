@@ -35,11 +35,17 @@ async function getData(username){
     }
 const check_result =(username, isFound)=>{
     if(isFound){
-
+       
         avatar.style.backgroundImage = `url(${isFound.avatar_url})`;
         avatar.style.backgroundSize = 'cover';
         avatar.style.backgroundPosition = 'center';
 
+        //profile link
+        
+        profile_link.href=isFound.html_url;
+        profile_link.innerHTML=`View Profile`;
+       
+        
        const re=document.getElementById("result_section");
        re.innerHTML=`<p>Username  <strong>  ${username}  </strong>  found </p> 
                     <br>
