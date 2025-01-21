@@ -57,12 +57,11 @@ const check_result =(username, isFound)=>{
                      <br>
                       
        `; 
-
-
     }
     else{
         re.innerHTML=`Username <strong> ${username} </strong> not found`;
     }};
+    
     
 
    
